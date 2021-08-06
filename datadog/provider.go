@@ -129,6 +129,8 @@ func Provider() *schema.Provider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
+			"datadog_api_key":                              resourceDatadogApiKey(),
+			"datadog_app_key":                              resourceDatadogAppKey(),
 			"datadog_dashboard":                            resourceDatadogDashboard(),
 			"datadog_dashboard_json":                       resourceDatadogDashboardJSON(),
 			"datadog_dashboard_list":                       resourceDatadogDashboardList(),
@@ -153,6 +155,8 @@ func Provider() *schema.Provider {
 			"datadog_metric_metadata":                      resourceDatadogMetricMetadata(),
 			"datadog_metric_tag_configuration":             resourceDatadogMetricTagConfiguration(),
 			"datadog_monitor":                              resourceDatadogMonitor(),
+			"datadog_organization":                         resourceDatadogOrganization(),
+			"datadog_organization_settings":                resourceDatadogOrganizationSettings(),
 			"datadog_role":                                 resourceDatadogRole(),
 			"datadog_security_monitoring_default_rule":     resourceDatadogSecurityMonitoringDefaultRule(),
 			"datadog_security_monitoring_rule":             resourceDatadogSecurityMonitoringRule(),
@@ -166,12 +170,15 @@ func Provider() *schema.Provider {
 		},
 
 		DataSourcesMap: map[string]*schema.Resource{
+			"datadog_api_key":                     dataSourceDatadogApiKey(),
+			"datadog_app_key":                     dataSourceDatadogAppKey(),
 			"datadog_dashboard":                   dataSourceDatadogDashboard(),
 			"datadog_dashboard_list":              dataSourceDatadogDashboardList(),
 			"datadog_ip_ranges":                   dataSourceDatadogIPRanges(),
 			"datadog_monitor":                     dataSourceDatadogMonitor(),
 			"datadog_monitors":                    dataSourceDatadogMonitors(),
 			"datadog_permissions":                 dataSourceDatadogPermissions(),
+			"datadog_organization_settings":       dataSourceDatadogOrganizationSettings(),
 			"datadog_role":                        dataSourceDatadogRole(),
 			"datadog_security_monitoring_rules":   dataSourceDatadogSecurityMonitoringRules(),
 			"datadog_security_monitoring_filters": dataSourceDatadogSecurityMonitoringFilters(),
